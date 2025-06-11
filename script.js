@@ -35,3 +35,8 @@ document.getElementById("themeToggle").addEventListener("click", () => {
 document.getElementById("discordBtn").addEventListener("click", () => {
   window.open("https://dsc.gg/getatlantisv6", "_blank");
 });
+
+// Download button
+document.getElementById("downloadBtn").addEventListener("click", () => {
+  window.open("https://atlantisv6.vercel.app/Atlantis%20Bootstrapper.exe", "_blank"); // 🔁 Replace with real file URL
+});
