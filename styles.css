@@ -1,66 +1,45 @@
 :root {
-  --bg: #050510;
-  --glass-bg: rgba(255, 255, 255, 0.04);
-  --card: rgba(255, 255, 255, 0.06);
-  --accent: #00ffff;
-  --accent-hover: #00ccff;
+  --bg: #0a0a1f;
   --text: #ffffff;
-  --text-dark: #1a1a1a;
   --subtext: #bbbbbb;
+  --accent: #00ffff;
+  --accent-dark: #00cccc;
+  --card: rgba(255, 255, 255, 0.05);
   --radius: 18px;
-  --blur: 18px;
-  --shadow: 0 8px 30px rgba(0, 255, 255, 0.1);
-  --transition: all 0.3s ease;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --blur: 14px;
+  --shadow: 0 4px 30px rgba(0, 255, 255, 0.1);
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  transition: background 0.3s, color 0.3s;
 }
 
 body.dark {
-  --bg: #f5f5f5;
-  --text: #121212;
-  --subtext: #444444;
-  --accent: #0077ff;
+  --bg: #f1f1f1;
+  --text: #1a1a1a;
+  --subtext: #333333;
   --card: rgba(0, 0, 0, 0.05);
-  --glass-bg: rgba(0, 0, 0, 0.07);
-  --shadow: 0 8px 30px rgba(0, 119, 255, 0.1);
-}
-
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  background: var(--bg);
+  --accent: #0077ff;
+  --accent-dark: #0055cc;
 }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
 }
 
-header {
-  margin-bottom: 3rem;
-}
-
 header h1 {
-  font-size: 3.8rem;
-  font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: bold;
   background: linear-gradient(to right, var(--accent), #0088ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -75,21 +54,20 @@ header h1 {
 .features {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 3rem;
+  flex-wrap: wrap;
 }
 
 .card {
   background: var(--card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(var(--blur));
   border-radius: var(--radius);
   padding: 2rem;
-  width: 300px;
-  text-align: left;
-  transition: var(--transition);
+  min-width: 250px;
+  flex: 1;
+  backdrop-filter: blur(var(--blur));
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
@@ -98,12 +76,24 @@ header h1 {
 
 .card h2 {
   color: var(--accent);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
 .card p {
   color: var(--subtext);
-  font-size: 0.95rem;
+}
+
+.editor-section {
+  margin-top: 5rem;
+}
+
+.editor-frame {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
 }
 
 .cta {
@@ -115,17 +105,23 @@ header h1 {
   position: relative;
   overflow: hidden;
   background: var(--accent);
-  color: var(--text-dark);
+  color: var(--bg);
   border: none;
-  border-radius: 40px;
+  border-radius: 50px;
   padding: 1rem 2.5rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
   margin: 0.5rem;
-  box-shadow: var(--shadow);
   cursor: pointer;
-  transition: var(--transition);
+  transition: background 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
+.cta button:hover,
+#themeToggle:hover {
+  background: var(--accent-dark);
+}
+
+/* Ripple effect from cursor */
 .cta button::before,
 #themeToggle::before {
   content: "";
@@ -135,7 +131,7 @@ header h1 {
   transform: translate(-50%, -50%);
   width: 0;
   height: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 60%);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
@@ -149,44 +145,8 @@ header h1 {
   opacity: 1;
 }
 
-.editor-section {
-  margin-top: 5rem;
-}
-
-.editor-frame {
-  width: 100%;
-  height: 450px;
-  border: none;
-  border-radius: var(--radius);
-  margin-top: 1.5rem;
-  box-shadow: var(--shadow);
-}
-
 footer {
   margin-top: 5rem;
+  font-size: 0.9rem;
   color: var(--subtext);
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
-
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  .cta button {
-    width: 100%;
-  }
-
-  .editor-frame {
-    height: 300px;
-  }
 }
