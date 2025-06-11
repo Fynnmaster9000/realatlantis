@@ -1,58 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atlantis Executor</title>
+  <link rel="icon" type="image/png" href="Atlantis_v6.png">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-</head>
-<body>
-  <div id="particles-js"></div>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<link rel="stylesheet" href="chrome-extension://ihcjicgdanjaechkgeegckofjjedodee/app/content-style.css"></head>
+<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
+  <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1350" height="675"></canvas></div>
 
   <div class="container">
-    <header>
+    <header data-aos="fade-down" class="aos-init aos-animate">
       <h1>Atlantis Executor</h1>
-      <p class="subtitle">Powerful Roblox script execution with style</p>
+      <p class="subtitle">Powerful. Smooth. Undetected.</p>
+      <button id="themeToggle">🌙 Toggle Theme</button>
     </header>
 
     <section class="features">
-      <div class="card">
-        <h2>Powerful</h2>
-        <p>Inject, run and debug scripts with ease</p>
+      <div class="card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <h2>Lightning Fast</h2>
+        <p>Inject scripts instantly with optimized execution.</p>
       </div>
-      <div class="card">
+      <div class="card aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
         <h2>Clean UI</h2>
-        <p>Modern dark/light toggle + Monaco editor</p>
+        <p>Modern interface with animations and particles.</p>
       </div>
-      <div class="card">
-        <h2>Fast Updates</h2>
-        <p>Updated for the latest Roblox patches</p>
+      <div class="card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+        <h2>Constant Updates</h2>
+        <p>New features and fixes pushed regularly.</p>
       </div>
     </section>
 
-    <div class="cta">
-      <button>Download</button>
-      <button id="themeToggle">Toggle Theme</button>
-    </div>
+    <section class="editor-section aos-init aos-animate" data-aos="fade-up">
+      <h2>Script Editor (Demo)</h2>
+      <img src="N5qxlob.png" class="editor-frame">
+    </section>
+
+    <section class="cta aos-init aos-animate" data-aos="zoom-in">
+      <button id="discordBtn">Join Our Discord</button>
+      <button id="downloadBtn">Download Executor</button>
+    </section>
+
+    <footer data-aos="fade-in" class="aos-init">
+      <p>© 2025 Atlantis Executor. All rights reserved.</p>
+    </footer>
   </div>
 
-  <script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-      console.log('particles.js config loaded');
-    });
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-    });
 
-    // Optional: handle ripple effect
-    document.querySelectorAll('button').forEach(button => {
-      button.addEventListener('mousemove', e => {
-        const rect = button.getBoundingClientRect();
-        button.style.setProperty('--x', `${e.clientX - rect.left}px`);
-        button.style.setProperty('--y', `${e.clientY - rect.top}px`);
-      });
-    });
-  </script>
-</body>
-</html>
+</body></html>
