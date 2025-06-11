@@ -121,7 +121,6 @@ header h1 {
   background: var(--accent-dark);
 }
 
-/* Ripple effect from cursor */
 .cta button::before,
 #themeToggle::before {
   content: "";
