@@ -40,3 +40,15 @@ document.getElementById("discordBtn").addEventListener("click", () => {
 document.getElementById("downloadBtn").addEventListener("click", () => {
   window.open("https://atlantisv6.vercel.app/Atlantis%20Bootstrapper.exe", "_blank"); // 🔁 Replace with real file URL
 });
+
+function setupHoverEffect(button) {
+  button.addEventListener("mousemove", (e) => {
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    button.style.setProperty('--x', `${x}px`);
+    button.style.setProperty('--y', `${y}px`);
+  });
+}
+
+document.querySelectorAll(".cta button, #themeToggle").forEach(setupHoverEffect);
