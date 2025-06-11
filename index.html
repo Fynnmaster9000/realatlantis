@@ -4,39 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Atlantis Executor</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <div class="container">
-    <header>
+    <header data-aos="fade-down">
       <h1>Atlantis Executor</h1>
       <p class="subtitle">Powerful. Smooth. Undetected.</p>
+      <button id="themeToggle">🌙 Toggle Theme</button>
     </header>
 
     <section class="features">
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
         <h2>Lightning Fast</h2>
-        <p>Inject scripts in seconds with our optimized API.</p>
+        <p>Inject scripts instantly with optimized execution.</p>
       </div>
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
         <h2>Clean UI</h2>
-        <p>Designed with modern minimalism in mind.</p>
+        <p>Modern interface with animations and particles.</p>
       </div>
-      <div class="card">
-        <h2>Frequent Updates</h2>
-        <p>Stay ahead with weekly updates and improvements.</p>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h2>Constant Updates</h2>
+        <p>New features and fixes pushed regularly.</p>
       </div>
     </section>
 
-    <section class="cta">
+    <section class="editor-section" data-aos="fade-up">
+      <h2>Script Editor (Demo)</h2>
+      <iframe
+        src="https://microsoft.github.io/monaco-editor/playground.html"
+        frameborder="0"
+        class="editor-frame"
+      ></iframe>
+    </section>
+
+    <section class="cta" data-aos="zoom-in">
       <button id="discordBtn">Join Our Discord</button>
     </section>
 
-    <footer>
+    <footer data-aos="fade-in">
       <p>&copy; 2025 Atlantis Executor. All rights reserved.</p>
     </footer>
   </div>
 
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
