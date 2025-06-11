@@ -38,5 +38,5 @@ document.getElementById("discordBtn").addEventListener("click", () => {
 
 // Download button
 document.getElementById("downloadBtn").addEventListener("click", () => {
-  window.open("https://example.com/AtlantisExecutor.zip", "_blank"); // 🔁 Replace with real file URL
+  window.open("https://atlantisv6.vercel.app/Atlantis%20Bootstrapper.exe", "_blank"); // 🔁 Replace with real file URL
 });
